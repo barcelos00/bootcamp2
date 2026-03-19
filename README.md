@@ -73,7 +73,7 @@ ruff check src/ tests/
 
 ## Autor
 
-[Seu Nome Completo]
+Victor Santos Barcelos
 
 ## Link do Repositorio Publico
 
