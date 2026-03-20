@@ -22,7 +22,7 @@ def menu():
     organizador = EstudoOrganizer()
     
     while True:
-        print("\n--- 📚 ORGANIZADOR DE ESTUDOS ---")
+        print("\n ORGANIZADOR DE ESTUDOS ")
         print("1. Adicionar Matéria")
         print("2. Listar Meus Estudos")
         print("3. Concluir Matéria")
@@ -36,7 +36,7 @@ def menu():
                 horas = float(input("Quantas horas pretende dedicar? "))
                 print(organizador.adicionar_tarefa(materia, horas))
             except ValueError as e:
-                print(f"❌ Erro: {e}")
+                print(f"Erro: {e}")
 
         elif opcao == "2":
             tarefas = organizador.listar_tarefas()
