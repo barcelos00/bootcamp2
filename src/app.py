@@ -43,18 +43,18 @@ def menu():
             if not tarefas:
                 print("📭 Nenhuma tarefa agendada.")
             for i, t in enumerate(tarefas):
-                status = "✅" if t["concluida"] else "⏳"
+                status = "concluido" if t["concluida"] else "estudando"
                 print(f"{i}. [{status}] {t['materia']} - {t['horas']}h")
 
         elif opcao == "3":
             indice = int(input("Digite o número da tarefa para concluir: "))
             if organizador.concluir_tarefa(indice):
-                print("🎉 Parabéns por concluir mais um estudo!")
+                print("Parabéns por concluir mais um estudo!")
             else:
-                print("❌ Tarefa não encontrada.")
+                print("Tarefa não encontrada.")
 
         elif opcao == "4":
-            print("Até logo! Bons estudos! 📖")
+            print("Até logo! Bons estudos! ")
             break
 
 if __name__ == "__main__":
