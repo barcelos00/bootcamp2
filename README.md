@@ -1,7 +1,6 @@
-# Estudo Organizer 📚
+# Estudo Organizer
 
-> **Status do Projeto:** 🚀 Etapa 2 - Evolução Concluída
-> **Link do Deploy:** [https://bootcamp2-estudo-organizer.streamlit.app/](https://bootcamp2-estudo-organizer.streamlit.app/)
+> **Status do Projeto:** Etapa 2 - Evolução Concluída
 
 ## Descrição do Problema
 
@@ -40,12 +39,18 @@ O Estudo Organizer evoluiu! Agora, além de gerenciar suas matérias, a aplicaç
     ```powershell
     pip install -r requirements.txt
     ```
+4. Rode o codigo pra poder abrir a interface:
+   ```powershell
+   streamlit run src/web_app.py
+    ```
 
 ## Instruções de Execução
 
 Para iniciar a aplicação:
 ```powershell
-python src/app.py
+python src/app.py #rodar no terminal
+
+streamlit run src/web_app.py  #rodar na interface grafica
 ```
 
 ## Testes e Qualidade
@@ -57,7 +62,7 @@ python -m pytest
 
 ## Versão Atual
 
-2.0.0 (MAJOR: Evolução com API e Testes de Integração)
+2.0.1 (MAJOR: Evolução com API e Testes de Integração)
 
 ## Autor
 
