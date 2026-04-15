@@ -1,0 +1,49 @@
+import streamlit as st
+from app import EstudoOrganizer
+
+st.set_page_config(page_title="Estudo Organizer", page_icon="📚")
+
+# Inicializa o organizador na sessão
+if 'organizador' not in st.session_state:
+    st.session_state.organizador = EstudoOrganizer()
+
+st.title("📚 Estudo Organizer")
+st.subheader("Organize seus estudos com motivação!")
+
+# Sidebar para adicionar tarefas
+with st.sidebar:
+    st.header("Adicionar Nova Matéria")
+    materia = st.text_input("Nome da Matéria")
+    horas = st.number_input("Horas de Dedicação", min_value=0.5, step=0.5)
+    if st.button("Adicionar"):
+        if materia:
+            msg = st.session_state.organizador.adicionar_tarefa(materia, horas)
+            st.success(msg)
+        else:
+            st.error("Digite o nome da matéria!")
+
+# Área Principal: Listagem e Conclusão
+st.header("Meus Estudos")
+tarefas = st.session_state.organizador.listar_tarefas()
+
+if not tarefas:
+    st.info("Nenhuma tarefa agendada. Use a barra lateral para adicionar!")
+else:
+    for i, t in enumerate(tarefas):
+        col1, col2 = st.columns([3, 1])
+        status = "✅" if t["concluida"] else "📖"
+        col1.write(f"{status} **{t['materia']}** - {t['horas']}h")
+        
+        if not t["concluida"]:
+            if col2.button("Concluir", key=f"btn_{i}"):
+                st.session_state.organizador.concluir_tarefa(i)
+                st.balloons()
+                conselho = st.session_state.organizador.obter_conselho_motivacional()
+                st.info(f"🎉 Parabéns! Dica do dia: {conselho}")
+                st.rerun()
+
+# Botão para Frase Motivacional avulsa
+st.divider()
+if st.button("💡 Obter Conselho Rápido"):
+    conselho = st.session_state.organizador.obter_conselho_motivacional()
+    st.success(f"**Dica de hoje:** {conselho}")
