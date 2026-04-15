@@ -1,4 +1,3 @@
-import pytest
 from src.app import EstudoOrganizer
 
 def test_obter_conselho_api_sucesso():
