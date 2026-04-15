@@ -1,80 +1,68 @@
-# Estudo Organizer
+# Estudo Organizer 📚
 
-## Descricao do Problema
+> **Status do Projeto:** 🚀 Etapa 2 - Evolução Concluída
+> **Link do Deploy:** [https://bootcamp2-estudo-organizer.streamlit.app/](https://bootcamp2-estudo-organizer.streamlit.app/)
 
-Este projeto foi desenvolvido para solucionar a dificuldade de organizacao e manutencao de rotinas de estudo enfrentada por diversos estudantes. A falta de um planejamento claro e de um acompanhamento de progresso muitas vezes resulta em procrastinacao e baixa produtividade academica.
+## Descrição do Problema
 
-## Proposta da Solucao
+Este projeto foi desenvolvido para solucionar a dificuldade de organização e manutenção de rotinas de estudo enfrentada por diversos estudantes. A falta de um planejamento claro e de um acompanhamento de progresso muitas vezes resulta em procrastinação e baixa produtividade acadêmica.
 
-O Estudo Organizer e uma aplicacao de interface de linha de comando (CLI) que permite ao usuario gerenciar suas atividades de estudo de forma estruturada. A solucao foca na simplicidade e na eficacia, permitindo o registro de materias, definicao de carga horaria e controle de conclusao de tarefas.
+## Proposta da Solução (Etapa 2)
 
-## Publico-Alvo
+O Estudo Organizer evoluiu! Agora, além de gerenciar suas matérias, a aplicação se conecta à **Advice Slip API** para fornecer frases motivacionais em tempo real, incentivando o foco e a disciplina.
 
-Estudantes de diversos niveis de ensino, pesquisadores e profissionais em constante aprendizado que necessitam de uma ferramenta leve e direta para organizar suas demandas diarias de estudo.
-
-## Funcionalidades Principais
-
-*   Adicao de tarefas de estudo com especificacao de materia e horas estimadas.
-*   Listagem completa de todas as tarefas cadastradas e seus respectivos status.
-*   Marcacao de tarefas como concluidas para acompanhamento de progresso.
-*   Validacao de dados para garantir que o tempo de estudo seja sempre positivo.
+### Novidades da Etapa 2:
+- **Integração com API:** Consumo de serviço externo para frases de incentivo.
+- **Testes de Integração:** Validação da comunicação com a API.
+- **Fluxo Profissional:** Uso de Issues e Branch `entrega-intermediaria`.
+- **Deploy:** Aplicação disponível online.
 
 ## Tecnologias Utilizadas
 
-*   Linguagem de Programacao: Python 3.11+
-*   Framework de Testes: Pytest
-*   Analise Estatica (Linting): Ruff
-*   Integracao Continua (CI): GitHub Actions
+*   **Linguagem:** Python 3.11+
+*   **Bibliotecas:** `requests` (API), `pytest` (Testes), `ruff` (Linting)
+*   **CI/CD:** GitHub Actions
+*   **Deploy:** Streamlit Cloud / Render
 
-## Instrucoes de Instalacao
+## Instruções de Instalação (Windows)
 
-1.  Realize o clone do repositorio:
-    ```bash
+1.  Realize o clone do repositório:
+    ```powershell
     git clone https://github.com/barcelos00/bootcamp2.git
     cd bootcamp2
     ```
 2.  Crie um ambiente virtual:
-    ```bash
+    ```powershell
     python -m venv venv
-    source venv/bin/activate  # No Windows: .\venv\Scripts\activate
+    .\venv\Scripts\activate
     ```
-3.  Instale as dependencias necessarias:
-    ```bash
+3.  Instale as dependências:
+    ```powershell
     pip install -r requirements.txt
     ```
 
-## Instrucoes de Execucao
+## Instruções de Execução
 
-Para iniciar a aplicacao interativa, utilize o comando:
-
-```bash
+Para iniciar a aplicação:
+```powershell
 python src/app.py
 ```
 
-## Instrucoes para Rodar os Testes
+## Testes e Qualidade
 
-Para executar a suite de testes automatizados, utilize o comando:
-
-```bash
+Para rodar os testes unitários e de integração:
+```powershell
 python -m pytest
 ```
 
-## Instrucoes para Rodar o Lint
+## Versão Atual
 
-Para executar a analise estatica de codigo e verificar a qualidade do mesmo, utilize o comando:
-
-```bash
-ruff check src/ tests/
-```
-
-## Versao Atual
-
-1.0.0
+2.0.0 (MAJOR: Evolução com API e Testes de Integração)
 
 ## Autor
 
 Victor Santos Barcelos
 
-## Link do Repositorio Publico
+## Link do Repositório Público
 
-https://github.com/barcelos00/bootcamp2
+[https://github.com/barcelos00/bootcamp2](https://github.com/barcelos00/bootcamp2)
