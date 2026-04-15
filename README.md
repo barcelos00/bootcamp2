@@ -67,7 +67,7 @@ python -m pytest
 
 ## Versão Atual
 
-2.0.1 (MAJOR: Evolução com API e Testes de Integração)
+2.0.3 (MAJOR: Evolução com API e Testes de Integração)
 
 ## Autor
 
