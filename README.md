@@ -40,6 +40,9 @@ O Estudo Organizer evoluiu! Agora, além de gerenciar suas matérias, a aplicaç
 3.  Instale as dependências:
     ```powershell
     pip install -r requirements.txt
+    
+    #caso não tenha streamlit pode baixar por fora peloseguinte codigo ou direto pelo requirements.
+    pip install streamlit
     ```
 4. Rode o codigo pra poder abrir a interface:
    ```powershell
