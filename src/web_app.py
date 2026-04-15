@@ -3,14 +3,12 @@ from app import EstudoOrganizer
 
 st.set_page_config(page_title="Estudo Organizer", page_icon="📚")
 
-# Inicializa o organizador na sessão
 if 'organizador' not in st.session_state:
     st.session_state.organizador = EstudoOrganizer()
 
-st.title("📚 Estudo Organizer")
+st.title("Estudo Organizer")
 st.subheader("Organize seus estudos com motivação!")
 
-# Sidebar para adicionar tarefas
 with st.sidebar:
     st.header("Adicionar Nova Matéria")
     materia = st.text_input("Nome da Matéria")
@@ -22,7 +20,6 @@ with st.sidebar:
         else:
             st.error("Digite o nome da matéria!")
 
-# Área Principal: Listagem e Conclusão
 st.header("Meus Estudos")
 tarefas = st.session_state.organizador.listar_tarefas()
 

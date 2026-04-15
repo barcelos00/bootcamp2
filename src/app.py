@@ -1,7 +1,6 @@
 import requests
 import sys
 
-# Garante que o terminal do Windows suporte emojis e caracteres especiais
 if sys.platform == "win32":
     import os
     os.system('chcp 65001 > nul')
@@ -29,7 +28,6 @@ class EstudoOrganizer:
     def obter_conselho_motivacional(self):
         """Consome a API pública Advice Slip para retornar um conselho."""
         try:
-            # Timeout curto para não travar o terminal se a internet estiver lenta
             response = requests.get("https://api.adviceslip.com/advice", timeout=5 )
             if response.status_code == 200:
                 data = response.json()
