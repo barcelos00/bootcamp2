@@ -19,6 +19,7 @@ O Estudo Organizer evoluiu! Agora, além de gerenciar suas matérias, a aplicaç
 - **Deploy:** Aplicação disponível online.
 - O projeto ainda é possivel de ser executado no terminal para caso nao abra na interface grafica.
 - Executado tanto no terminal pra poder ser executavel sem o acesso a rede local criada.
+- Implementação de um banco de dados pra poder manter salvo as informações.
 
 ## Tecnologias Utilizadas
 
