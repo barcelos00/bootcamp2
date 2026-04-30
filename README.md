@@ -78,3 +78,7 @@ Victor Santos Barcelos
 ## Link do Repositório Público
 
 [https://github.com/barcelos00/bootcamp2](https://github.com/barcelos00/bootcamp2)
+
+## Link da Aplicação Web
+
+https://bootcamp2-u8xbkegk9svbnhdgjurzqt.streamlit.app/
