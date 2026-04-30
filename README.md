@@ -1,4 +1,6 @@
 # Estudo Organizer
+![Version](https://img.shields.io/badge/version-2.0.3-blue )
+[![CI - Estudo Organizer](https://github.com/barcelos00/bootcamp2/actions/workflows/ci.yml/badge.svg )](https://github.com/barcelos00/bootcamp2/actions/workflows/ci.yml )
 
 > **Status do Projeto:** Etapa 2 - Evolução Concluída
 
@@ -17,6 +19,7 @@ O Estudo Organizer evoluiu! Agora, além de gerenciar suas matérias, a aplicaç
 - **Deploy:** Aplicação disponível online.
 - O projeto ainda é possivel de ser executado no terminal para caso nao abra na interface grafica.
 - Executado tanto no terminal pra poder ser executavel sem o acesso a rede local criada.
+- Implementação de um banco de dados pra poder manter salvo as informações.
 
 ## Tecnologias Utilizadas
 
@@ -40,6 +43,9 @@ O Estudo Organizer evoluiu! Agora, além de gerenciar suas matérias, a aplicaç
 3.  Instale as dependências:
     ```powershell
     pip install -r requirements.txt
+    
+    #caso não tenha streamlit pode baixar por fora peloseguinte codigo ou direto pelo requirements.
+    pip install streamlit
     ```
 4. Rode o codigo pra poder abrir a interface:
    ```powershell
@@ -64,7 +70,7 @@ python -m pytest
 
 ## Versão Atual
 
-2.0.1 (MAJOR: Evolução com API e Testes de Integração)
+2.0.3 (MAJOR: Evolução com API e Testes de Integração)
 
 ## Autor
 
@@ -73,3 +79,7 @@ Victor Santos Barcelos
 ## Link do Repositório Público
 
 [https://github.com/barcelos00/bootcamp2](https://github.com/barcelos00/bootcamp2)
+
+## Link da Aplicação Web
+
+https://bootcamp2-u8xbkegk9svbnhdgjurzqt.streamlit.app/
