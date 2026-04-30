@@ -44,8 +44,20 @@ else:
                 st.info(f"🎉 Parabéns! Dica do dia: {conselho}")
                 st.rerun()
 
-# Botão para Frase Motivacional avulsa
+# Seção de Ações Gerais
 st.divider()
-if st.button("💡 Obter Conselho Rápido"):
-    conselho = st.session_state.organizador.obter_conselho_motivacional()
-    st.success(f"**Dica de hoje:** {conselho}")
+col1, col2 = st.columns(2)
+
+with col1:
+    if st.button("💡 Obter Conselho Rápido"):
+        conselho = st.session_state.organizador.obter_conselho_motivacional()
+        st.success(f"**Dica de hoje:** {conselho}")
+
+with col2:
+    if st.button("🗑️ Remover Concluídas", type="secondary"):
+        removidas = st.session_state.organizador.remover_tarefas_concluidas()
+        if removidas > 0:
+            st.success(f"✅ {removidas} tarefas concluídas foram removidas!")
+            st.rerun()
+        else:
+            st.info("Nenhuma tarefa concluída para remover.")

@@ -67,6 +67,15 @@ class EstudoOrganizer:
         self._close_db_connection(conn)
         return rows_affected > 0
 
+    def remover_tarefas_concluidas(self):
+        conn = self._get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("DELETE FROM tarefas WHERE concluida = 1")
+        conn.commit()
+        rows_affected = cursor.rowcount
+        self._close_db_connection(conn)
+        return rows_affected
+
     def obter_conselho_motivacional(self):
         """Consome a API pública Advice Slip para retornar um conselho."""
         try:
@@ -86,8 +95,9 @@ def menu():
         print("1. Adicionar Materia")
         print("2. Listar Meus Estudos")
         print("3. Concluir Materia")
-        print("4. Obter Frase Motivacional (API)")
-        print("5. Sair")
+        print("4. Remover Materias Concluidas")
+        print("5. Obter Frase Motivacional (API)")
+        print("6. Sair")
         
         opcao = input("\nEscolha uma opcao: ")
 
@@ -120,9 +130,13 @@ def menu():
                 print("Por favor, digite um numero valido.")
 
         elif opcao == "4":
-            print(f"\nConselho para voce: {organizador.obter_conselho_motivacional()}")
+            removidas = organizador.remover_tarefas_concluidas()
+            print(f"Sucesso: {removidas} tarefas concluidas foram removidas!")
 
         elif opcao == "5":
+            print(f"\nConselho para voce: {organizador.obter_conselho_motivacional()}")
+
+        elif opcao == "6":
             print("Ate logo! Bons estudos!")
             break
 
