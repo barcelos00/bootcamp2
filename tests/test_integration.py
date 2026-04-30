@@ -59,3 +59,22 @@ def test_fluxo_conclusao_com_api(organizador_db):
     tarefas_depois = organizador_db.listar_tarefas()
     assert tarefas_depois[0]["concluida"] is True
     # A chamada da API é interna ao método, não precisamos testar o retorno aqui, apenas que não quebrou
+
+def test_remover_tarefas_concluidas(organizador_db):
+    """Testa a remoção de tarefas que foram marcadas como concluídas."""
+    # Adiciona duas tarefas
+    organizador_db.adicionar_tarefa("Tarefa 1", 1)
+    organizador_db.adicionar_tarefa("Tarefa 2", 2)
+    
+    # Conclui a primeira
+    tarefas = organizador_db.listar_tarefas()
+    organizador_db.concluir_tarefa(tarefas[0]["id"])
+    
+    # Remove as concluídas
+    removidas = organizador_db.remover_tarefas_concluidas()
+    assert removidas == 1
+    
+    # Verifica se sobrou apenas a tarefa não concluída
+    tarefas_restantes = organizador_db.listar_tarefas()
+    assert len(tarefas_restantes) == 1
+    assert tarefas_restantes[0]["materia"] == "Tarefa 2"
