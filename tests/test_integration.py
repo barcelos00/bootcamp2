@@ -27,7 +27,7 @@ def test_adicionar_e_listar_tarefa(organizador_db):
     assert len(tarefas) == 1
     assert tarefas[0]["materia"] == "Matemática"
     assert tarefas[0]["horas"] == 3.0
-    assert tarefas[0]["concluida"] == False
+    assert tarefas[0]["concluida"]
 
 def test_concluir_tarefa(organizador_db):
     """Testa a conclusão de uma tarefa no banco de dados."""
@@ -39,7 +39,7 @@ def test_concluir_tarefa(organizador_db):
     assert resultado is True
 
     tarefas_depois = organizador_db.listar_tarefas()
-    assert tarefas_depois[0]["concluida"] == True
+    assert tarefas_depois[0]["concluida"]
 
 def test_concluir_tarefa_inexistente(organizador_db):
     """Testa a tentativa de concluir uma tarefa com ID inexistente.""" 
