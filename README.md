@@ -1,5 +1,5 @@
 # Estudo Organizer
-![Version](https://img.shields.io/badge/version-2.0.3-blue )
+![Version](https://img.shields.io/badge/version-2.1.3-blue )
 [![CI - Estudo Organizer](https://github.com/barcelos00/bootcamp2/actions/workflows/ci.yml/badge.svg )](https://github.com/barcelos00/bootcamp2/actions/workflows/ci.yml )
 
 > **Status do Projeto:** Etapa 2 - Evolução Concluída
