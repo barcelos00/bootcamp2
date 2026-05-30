@@ -1,85 +1,32 @@
-# Estudo Organizer
-![Version](https://img.shields.io/badge/version-2.1.3-blue )
-[![CI - Estudo Organizer](https://github.com/barcelos00/bootcamp2/actions/workflows/ci.yml/badge.svg )](https://github.com/barcelos00/bootcamp2/actions/workflows/ci.yml )
+# Estudo Organizer 📚
 
-> **Status do Projeto:** Etapa 2 - Evolução Concluída
+## 📖 Apresentação do Projeto
+O Estudo Organizer é uma aplicação web interativa voltada para o gerenciamento de tarefas e acompanhamento de horas de estudo. O objetivo do projeto é ajudar o usuário a manter o foco, permitindo o registro de matérias, o controle do tempo dedicado a cada uma e a visualização clara do progresso, tudo isso com um toque extra de incentivo através de mensagens motivacionais.
 
-## Descrição do Problema
+## ⚙️ Como Funciona
+A plataforma possui uma interface intuitiva dividida em duas áreas principais:
+* **Barra Lateral:** Utilizada para o cadastro de novas matérias e a definição da carga horária pretendida.
+* **Painel Principal:** Exibe a lista completa de estudos. Aqui, o usuário pode marcar as tarefas como concluídas, remover as finalizadas para limpar o painel e solicitar dicas motivacionais geradas em tempo real.
+* Todos os dados inseridos são processados pelo backend em Python e salvos permanentemente em um banco de dados na nuvem, garantindo que o progresso não seja perdido ao fechar o navegador.
 
-Este projeto foi desenvolvido para solucionar a dificuldade de organização e manutenção de rotinas de estudo enfrentada por diversos estudantes. A falta de um planejamento claro e de um acompanhamento de progresso muitas vezes resulta em procrastinação e baixa produtividade acadêmica.
+## 💻 Plataformas e Tecnologias Utilizadas
+* **Python 3.11:** Linguagem base da aplicação.
+* **Streamlit:** Framework utilizado para a construção da interface gráfica web.
+* **Supabase:** Plataforma Backend-as-a-Service (BaaS) baseada em PostgreSQL, responsável pelo armazenamento de dados na nuvem.
+* **Pytest:** Biblioteca utilizada para a execução dos testes de integração e validação do código com mocks.
+* **Advice Slip API:** API pública consumida para gerar os conselhos motivacionais.
 
-## Proposta da Solução (Etapa 2)
+## 🚀 Como Iniciar
 
-O Estudo Organizer evoluiu! Agora, além de gerenciar suas matérias, a aplicação se conecta à **Advice Slip API** para fornecer frases motivacionais em tempo real, incentivando o foco e a disciplina.
+### 1. Pré-requisitos
+Tenha o Python 3.11 ou superior instalado em sua máquina e uma conta ativa no [Supabase](https://supabase.com/). Configure uma tabela chamada `tarefas` no seu banco de dados com as colunas `id` (int8), `materia` (text), `horas` (float8) e `concluida` (boolean), desativando o RLS (Row Level Security).
 
-### Novidades da Etapa 2:
-- **Integração com API:** Consumo de serviço externo para frases de incentivo.
-- **Testes de Integração:** Validação da comunicação com a API.
-- **Fluxo Profissional:** Uso de Issues e Branch `entrega-intermediaria`.
-- **Deploy:** Aplicação disponível online.
-- O projeto ainda é possivel de ser executado no terminal para caso nao abra na interface grafica.
-- Executado tanto no terminal pra poder ser executavel sem o acesso a rede local criada.
-- Implementação de um banco de dados pra poder manter salvo as informações.
+### 2. Configuração das Variáveis de Ambiente
+Crie um arquivo chamado `.env` na pasta raiz do projeto contendo as suas credenciais do Supabase, no seguinte formato:
+SUPABASE_URL=sua_url_aqui
+SUPABASE_KEY=sua_chave_aqui
 
-## Tecnologias Utilizadas
-
-*   **Linguagem:** Python 3.11+
-*   **Bibliotecas:** `requests` (API), `pytest` (Testes), `ruff` (Linting)
-*   **CI/CD:** GitHub Actions
-*   **Deploy:** Streamlit Cloud / Render
-
-## Instruções de Instalação (Windows)
-
-1.  Realize o clone do repositório:
-    ```powershell
-    git clone https://github.com/barcelos00/bootcamp2.git
-    cd bootcamp2
-    ```
-2.  Crie um ambiente virtual:
-    ```powershell
-    python -m venv venv
-    .\venv\Scripts\activate
-    ```
-3.  Instale as dependências:
-    ```powershell
-    pip install -r requirements.txt
-    
-    #caso não tenha streamlit pode baixar por fora peloseguinte codigo ou direto pelo requirements.
-    pip install streamlit
-    ```
-4. Rode o codigo pra poder abrir a interface:
-   ```powershell
-   streamlit run src/web_app.py
-    ```
-
-## Instruções de Execução
-
-Para iniciar a aplicação:
-```powershell
-python src/app.py #rodar no terminal
-
-streamlit run src/web_app.py  #rodar na interface grafica
-```
-
-## Testes e Qualidade
-
-Para rodar os testes unitários e de integração:
-```powershell
-python -m pytest
-```
-
-## Versão Atual
-
-2.1.3 (MAJOR: Evolução com API e Testes de Integração, base de dados pra salvar)
-
-## Autor
-
-Victor Santos Barcelos
-
-## Link do Repositório Público
-
-[https://github.com/barcelos00/bootcamp2](https://github.com/barcelos00/bootcamp2)
-
-## Link da Aplicação Web
-
-https://bootcamp2-u8xbkegk9svbnhdgjurzqt.streamlit.app/
+### 3. Instalação das Dependências
+Abra o terminal na pasta raiz do seu projeto e instale as bibliotecas necessárias com o comando:
+```bash
+python -m pip install -r requirements.txt

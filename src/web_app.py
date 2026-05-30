@@ -3,12 +3,12 @@ from app import EstudoOrganizer
 
 st.set_page_config(page_title="Estudo Organizer", page_icon="📚")
 
-# Inicializa o organizador com o banco de dados persistente
+# Inicializa o organizador (agora ele gerencia a conexão com Supabase internamente)
 if 'organizador' not in st.session_state:
     st.session_state.organizador = EstudoOrganizer()
 
 st.title("Estudo Organizer")
-st.subheader("Organize seus estudos com motivação!")
+st.subheader("Organize seus estudos com o Supabase!")
 
 with st.sidebar:
     st.header("Adicionar Nova Matéria")
@@ -20,12 +20,13 @@ with st.sidebar:
                 msg = st.session_state.organizador.adicionar_tarefa(materia, horas)
                 st.success(msg)
                 st.rerun()
-            except ValueError as e:
-                st.error(f"Erro: {e}")
+            except Exception as e:
+                st.error(f"Erro ao salvar no banco: {e}")
         else:
             st.error("Digite o nome da matéria!")
 
 st.header("Meus Estudos")
+# Busca as tarefas atualizadas do Supabase
 tarefas = st.session_state.organizador.listar_tarefas()
 
 if not tarefas:
@@ -40,24 +41,16 @@ else:
             if col2.button("Concluir", key=f"btn_{t['id']}"):
                 st.session_state.organizador.concluir_tarefa(t["id"])
                 st.balloons()
-                conselho = st.session_state.organizador.obter_conselho_motivacional()
-                st.info(f"🎉 Parabéns! Dica do dia: {conselho}")
                 st.rerun()
 
-# Seção de Ações Gerais
 st.divider()
-col1, col2 = st.columns(2)
+if st.button("💡 Obter Conselho Rápido"):
+    st.success(f"**Dica de hoje:** {st.session_state.organizador.obter_conselho_motivacional()}")
 
-with col1:
-    if st.button("💡 Obter Conselho Rápido"):
-        conselho = st.session_state.organizador.obter_conselho_motivacional()
-        st.success(f"**Dica de hoje:** {conselho}")
-
-with col2:
-    if st.button("🗑️ Remover Concluídas", type="secondary"):
-        removidas = st.session_state.organizador.remover_tarefas_concluidas()
-        if removidas > 0:
-            st.success(f"✅ {removidas} tarefas concluídas foram removidas!")
-            st.rerun()
-        else:
-            st.info("Nenhuma tarefa concluída para remover.")
+if st.button("🗑️ Remover Concluídas"):
+    removidas = st.session_state.organizador.remover_tarefas_concluidas()
+    if removidas > 0:
+        st.success(f"✅ {removidas} tarefas concluídas foram removidas!")
+        st.rerun()
+    else:
+        st.info("Nenhuma tarefa concluída para remover.")
