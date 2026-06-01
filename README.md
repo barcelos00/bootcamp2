@@ -94,7 +94,7 @@ Pronto! Isso deve passar reto pelo erro do `pyiceberg` e abrir o seu site no nav
 
 ## 👥 Integrantes do Grupo
 | Nome | Matrícula |
-| Victor Barcelos | XXXXXXX |
+| Victor Barcelos | 22504504 |
 | Gabriel Henrique | 22508587|
 | Lucas Vieira Werneck| 22508352|
 
