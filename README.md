@@ -100,4 +100,4 @@ Pronto! Isso deve passar reto pelo erro do `pyiceberg` e abrir o seu site no nav
 
 ## 🔗 Links
 * **Repositório:** https://github.com/barcelos00/bootcamp2
-* **Deploy:** 
+* **Deploy:** https://bootcamp2-x44rb2nkmhsznqls9qdvqw.streamlit.app/
