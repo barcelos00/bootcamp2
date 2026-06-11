@@ -93,12 +93,13 @@ python -m streamlit run src/web_app.py
 Pronto! Isso deve passar reto pelo erro do `pyiceberg` e abrir o seu site no navegador.
 
 ## 👥 Integrantes do Grupo
-###  | Nome | Matrícula |
+### | Nome | Matrícula |
+
 | Victor Barcelos | 22504504 |
 | Gabriel Henrique | 22508587|
 | Lucas Vieira Werneck | 22508352|
 | Enzo Ferreira Mattiola | 22510291 |
-
+| Victor Lemes | [Coloque a Matrícula Aqui] |
 
 ## 🔗 Links
 * **Repositório:** https://github.com/barcelos00/bootcamp2
